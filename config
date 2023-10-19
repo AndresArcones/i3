@@ -52,6 +52,10 @@ bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 
 bindsym $mod+x exec firefox
 
+
+# execute printscreen
+bindsym --release $mod+p exec scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -t image/png -i $f'
+
 # kill focused window
 bindsym $mod+q kill
 

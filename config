@@ -221,17 +221,16 @@ workspace 10 output eDP-1
 # Assign workspaces
 # assign [class="org.wezfurlong.wezterm"] 1
 # assign [class="kitty"] 1
-# assign [class="jetbrains-idea-ce"] 1
-# assign [class="firefox"] 2
+assign [class="jetbrains-idea-ce"] 1
+assign [class="firefox"] 2
 assign [class="Slack"] 3
 assign [class="teams-for-linux"] 4
 assign [class="Prospect Mail"] 8
 assign [class="Spotify"] 9
 
-# # wallpaper
-# exec always nitrogen --restore
-
 # Start applications
+exec jetbrains-idea-ce
+exec firefox
 exec slack
 exec teams-for-linux
 exec prospect-mail

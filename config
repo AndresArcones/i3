@@ -35,8 +35,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # set wallpaper using nitrogen
-exec --no-startup-id nitrogen --restore
+exec feh --bg-scale ~/Documents/wallpapers/banu-mm-wallpaper.jpg
 
+# set notification daemon to dunst
+exec killall -q notify-osd
+exec --no-startup-id dunst -config ~/.dotfiles/dunst/dunstrc1
+#
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -53,11 +57,14 @@ floating_modifier $mod
 bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 # bindsym $mod+Return exec alacrity
 
-bindsym $mod+x exec firefox
+bindsym $mod+x exec microsoft-edge
 
 
-# execute printscreen
-bindsym --release $mod+p exec scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -t image/png -i $f'
+# execute printscreen and copy to clipboard
+# bindsym --release $mod+p exec scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -t image/png -i $f'
+
+# execute printscreen with flameshot
+bindsym --release $mod+p exec flameshot gui
 
 # kill focused window
 bindsym $mod+q kill
@@ -232,17 +239,19 @@ workspace 10 output eDP-1
 # assign [class="org.wezfurlong.wezterm"] 1
 # assign [class="kitty"] 1
 assign [class="jetbrains-idea-ce"] 1
-assign [class="firefox"] 2
+assign [class="microsoft-edge"] 2
 assign [class="Slack"] 3
 assign [class="teams-for-linux"] 4
+assign [class="obsidian"] 7
 assign [class="Prospect Mail"] 8
 assign [class="Spotify"] 9
 
 # Start applications
 exec jetbrains-idea-ce
-exec firefox
+exec microsoft-edge
 exec slack
 exec teams-for-linux
+exec obsidian
 exec prospect-mail
 exec spotify
 

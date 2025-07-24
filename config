@@ -34,13 +34,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# set wallpaper using nitrogen
-exec feh --bg-scale ~/Documents/wallpapers/banu-mm-wallpaper.jpg
+# set wallpaper using feh
+exec --no-startup-id feh --bg-scale ~/Documents/wallpapers/horde.jpg
 
 # set notification daemon to dunst
 exec killall -q notify-osd
-exec --no-startup-id dunst -config ~/.dotfiles/dunst/dunstrc1
-#
+exec --no-startup-id dunst -config ~/.dotfiles/dunst/dunstrc3
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -219,19 +219,19 @@ bar {
     position top
     # tray_output none
     font pango:Inconsolata 10
-    tray_output DP-4
+    tray_output eDP-1 #DP-4
     status_command bumblebee-status -m layout xrandr load cpu memory \
 		pasink pasource battery time date -p time.format="%HH:%MM" -t solarized
 }
 
 workspace 1 output DP-4
-workspace 2 output DP-4
-workspace 3 output DP-4
-workspace 4 output DP-4
-workspace 5 output DP-4
-workspace 6 output DP-4
-workspace 8 output DP-4
-workspace 9 output DP-4
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 6 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
 workspace 10 output eDP-1
 
 
@@ -241,7 +241,8 @@ workspace 10 output eDP-1
 assign [class="jetbrains-idea-ce"] 1
 assign [class="microsoft-edge"] 2
 assign [class="Slack"] 3
-assign [class="teams-for-linux"] 4
+# assign [class="teams-for-linux"] 4
+assign [instance="crx__cifhbcnohmdccbgoicgdjpfamggdegmo"] 4
 assign [class="obsidian"] 7
 assign [class="Prospect Mail"] 8
 assign [class="Spotify"] 9
@@ -250,7 +251,8 @@ assign [class="Spotify"] 9
 exec jetbrains-idea-ce
 exec microsoft-edge
 exec slack
-exec teams-for-linux
+# exec teams-for-linux
+exec teams-pwa
 exec obsidian
 exec prospect-mail
 exec spotify
@@ -260,10 +262,11 @@ default_border pixel 1
 default_floating_border pixel 1
 for_window [class="^.*"] border pixel 1
 
+
 # Gaps between windows
-gaps inner 15
-gaps outer 10
+gaps inner 5
+gaps outer 0
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #f9f6f2 #ffffff #000000 #ffffff   #ffffff
+client.focused          #00ff00 #00ff00 #000000 #00ff00   #00ff00
 client.unfocused        #333333 #000000 #f9f6f2 #292d2e   #222222

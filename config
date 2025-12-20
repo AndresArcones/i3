@@ -245,20 +245,20 @@ workspace 10 output eDP-1
 # assign [class="jetbrains-idea-ce"] 1
 assign [instance="microsoft-edge"] 2
 assign [class="Slack"] 3
-# assign [class="teams-for-linux"] 4
-assign [instance="crx__cifhbcnohmdccbgoicgdjpfamggdegmo"] 4
+assign [class="teams-for-linux"] 4
+# assign [instance="crx__cifhbcnohmdccbgoicgdjpfamggdegmo"] 4
 assign [class="obsidian"] 7
-assign [class="Prospect Mail"] 8
+# assign [class="Prospect Mail"] 8
 assign [class="Spotify"] 9
 
 # Start applications
 exec idea
 exec microsoft-edge
 exec slack
-# exec teams-for-linux
-exec teams-pwa
+exec teams-for-linux
+# exec teams-pwa
 exec obsidian
-exec prospect-mail
+# exec prospect-mail
 exec spotify
 
 #Hide window title bar

@@ -54,7 +54,7 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+Return exec wezterm
-bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
+bindsym $mod+Return exec nixgl kitty
 # bindsym $mod+Return exec alacrity
 
 bindsym $mod+x exec microsoft-edge
